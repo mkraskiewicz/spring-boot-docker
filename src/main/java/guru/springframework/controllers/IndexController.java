@@ -1,6 +1,7 @@
-package com.mkraskiewicz.springbootdocker.controllers;
+package guru.springframework.controllers;
 
-import com.mkraskiewicz.springbootdocker.services.ProductService;
+import guru.springframework.services.ProductService;
+import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -13,6 +14,7 @@ public class IndexController {
 
     private ProductService productService;
 
+    @Autowired
     public IndexController(ProductService productService) {
         this.productService = productService;
     }
@@ -24,4 +26,5 @@ public class IndexController {
 
         return "index";
     }
+
 }

@@ -1,6 +1,6 @@
-package com.mkraskiewicz.springbootdocker.services;
+package guru.springframework.services;
 
-import com.mkraskiewicz.springbootdocker.domain.Product;
+import guru.springframework.domain.Product;
 
 import java.util.List;
 

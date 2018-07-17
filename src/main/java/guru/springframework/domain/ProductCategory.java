@@ -1,4 +1,4 @@
-package com.mkraskiewicz.springbootdocker.domain;
+package guru.springframework.domain;
 
 import lombok.Data;
 

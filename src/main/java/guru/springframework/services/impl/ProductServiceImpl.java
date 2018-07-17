@@ -1,9 +1,9 @@
-package com.mkraskiewicz.springbootdocker.services.impl;
+package guru.springframework.services.impl;
 
-import com.mkraskiewicz.springbootdocker.domain.Author;
-import com.mkraskiewicz.springbootdocker.domain.Product;
-import com.mkraskiewicz.springbootdocker.domain.ProductCategory;
-import com.mkraskiewicz.springbootdocker.services.ProductService;
+import guru.springframework.domain.Author;
+import guru.springframework.domain.Product;
+import guru.springframework.domain.ProductCategory;
+import guru.springframework.services.ProductService;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
