@@ -1,0 +1,27 @@
+
+
+somename: value #This is a comment
+
+anothername: '#value'
+
+
+spring:
+  datasource:
+    initial-size: 1
+    max-active: 10
+    min-idle: 1
+    max-idle: 5
+
+somelist:
+- value1: one
+- value2: two
+
+somelist2:
+  - value1: one
+  - value2: two
+
+anothermaplist:
+  - keyvalue: 1
+    value: 'my value'
+  - keyvalue: 2
+    value: 'my value'
