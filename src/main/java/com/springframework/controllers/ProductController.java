@@ -1,11 +1,13 @@
-package guru.springframework.controllers;
+package com.springframework.controllers;
 
+
+import com.springframework.services.ProductService;
 import guru.springframework.model.events.PageViewEvent;
 import guru.springframework.pageview.PageViewService;
-import guru.springframework.services.ProductService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.stereotype.Controller;
 import org.springframework.ui.Model;
+import org.springframework.web.bind.annotation.PathVariable;
 import org.springframework.web.bind.annotation.RequestMapping;
 
 import java.util.Date;
@@ -15,30 +17,30 @@ import java.util.UUID;
  * Created by Maciej on 12/07/2018
  */
 @Controller
-public class IndexController {
+public class ProductController {
 
     private ProductService productService;
     private PageViewService pageViewService;
+
     @Autowired
-    public IndexController(ProductService productService, PageViewService pageViewService) {
+    public ProductController(ProductService productService, PageViewService pageViewService) {
         this.productService = productService;
         this.pageViewService = pageViewService;
     }
 
-    @RequestMapping({"/", "index"})
-    public String getIndex(Model model){
+    @RequestMapping("/product/{id}")
+    public String getProductById(@PathVariable Integer id, Model model){
 
+        model.addAttribute("product", productService.getProduct(id));
+
+        //Send Page view event
         PageViewEvent pageViewEvent = new PageViewEvent();
+        pageViewEvent.setPageUrl("springframework.guru/product/" + id);
         pageViewEvent.setPageViewDate(new Date());
-        pageViewEvent.setPageUrl("springframework.guru");
         pageViewEvent.setCorrelationId(UUID.randomUUID().toString());
 
         pageViewService.sendPageViewEvent(pageViewEvent);
 
-
-        model.addAttribute("products", productService.listProducts());
-
-        return "index";
+        return "product";
     }
-
 }

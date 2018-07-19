@@ -1,9 +1,9 @@
-package guru.springframework.services.impl;
+package com.springframework.services.impl;
 
-import guru.springframework.domain.Author;
-import guru.springframework.domain.Product;
-import guru.springframework.domain.ProductCategory;
-import guru.springframework.services.ProductService;
+import com.springframework.services.ProductService;
+import com.springframework.domain.Author;
+import com.springframework.domain.Product;
+import com.springframework.domain.ProductCategory;
 import org.springframework.stereotype.Service;
 
 import java.math.BigDecimal;
